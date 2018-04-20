@@ -10,23 +10,10 @@ def won?(board)
   WIN_COMBINATIONS.each do |win_combo|
     win_combo.each do |win_index|
       if board[win_index]=="X"
-    #check for player 1 win
-    if check_win_combination?(board, 'X', win_combo)
-      return win_combo
-      #check for player 2 win
-    elsif check_win_combination?(board, 'O', win_combo)
-      return win_combo
-    else
+      else
       return false
     end 
     end
-  end
-end
-
-#CHECK WINNING COMBOS
-def check_win_combination?(board, player, win_combo)
-  win_combo.all? do |position|
-    board[position] == player
   end
 end
 
