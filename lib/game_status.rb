@@ -12,7 +12,7 @@ def won?(board)
       if board[win_index]=="X"
         return true
       elsif board[win_index]=="O"
-        return index
+        return true
       else 
         return false
       end 
