@@ -7,12 +7,15 @@ end
 WIN_COMBINATIONS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |win_combo|
-    win_combo.each do |win_index|
+  WIN_COMBINATIONS.each do |win_array|
+    win_array.each do |win_index|
       if board[win_index]=="X"
-      else
-      return false
-    end 
+        return true
+      elsif board[win_index]=="O"
+        return index
+      else 
+        return false
+      end 
     end
   end
 end
@@ -36,7 +39,6 @@ def over?(board)
   if won?(board) || draw?(board) || full?(board)
     return true
   else
-    #puts 'no keep going'
     return false
   end
 end
@@ -44,8 +46,8 @@ end
 def winner(board)
   if !won?(board)
     return nil
-  else WIN_COMBINATIONS.each do |win_combo|
-    if win_combo.include?("X")
+  else WIN_COMBINATIONS.each do |win_array|
+    if win_array.include?("X")
       return 'X'
     elsif 
       return 'O'
